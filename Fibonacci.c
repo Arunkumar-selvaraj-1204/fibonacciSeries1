@@ -60,6 +60,10 @@ int nthElement(int n){
     return nthElement(n-1)+nthElement(n-2);
 }
 
+int getMaxValue(int* array,int n){
+    return array[n-1];
+}
+
 int main()
 {
     int n;
@@ -73,4 +77,5 @@ int main()
     int* odd=FibonacciSeriesOddNumbers(array,n);
     for(int i=0; i<sizeof(odd)/sizeof(odd[0]); i++) printf("%d ", odd[i]);
     printf("\n%d",nthElement(n));
+    printf("\n%d",getMaxValue(array,n));
 }
