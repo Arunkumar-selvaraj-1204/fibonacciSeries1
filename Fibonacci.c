@@ -51,7 +51,7 @@ int sumSeries(int *arr, int n){
         sum+=arr[i];
     }
 
-    return sum+2;
+    return sum;
 }
 
 int nthElement(int n){
