@@ -30,6 +30,21 @@ int* FibonacciSeriesEvenNumbers(int* arr, int n){
     return even;
 }
 
+int* FibonacciSeriesOddNumbers(int* arr, int n){
+    int i,size=0;
+    for(i=0;i<n;i++){
+        if(arr[i]%2==0) size++;
+    }
+    int* odd = (int*)malloc(size*sizeof(int));
+    int j=0;
+    for(i=0;i<n;i++){
+        if(arr[i]%2==0){
+            odd[j++]=arr[i];
+        } 
+    }
+    return odd;
+}
+
 int sumSeries(int *arr, int n){
     int i, sum=0;
     for(i=0; i<n; i++){
@@ -48,4 +63,7 @@ int main()
     printf("\n");
     int* even=FibonacciSeriesEvenNumbers(array,n);
     for(int i=0; i<sizeof(even)/sizeof(even[0]); i++) printf("%d ", even[i]);
+    printf("\n");
+    int* even=FibonacciSeriesOddNumbers(array,n);
+    for(int i=0; i<sizeof(odd)/sizeof(odd[0]); i++) printf("%d ", odd[i]);
 }
