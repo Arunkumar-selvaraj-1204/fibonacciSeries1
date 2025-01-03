@@ -6,7 +6,7 @@ int* FibonacciSeries(int n){
     
     int* array = (int*)malloc(n*sizeof(int));
     
-    for(int i=0; i<n; i--){
+    for(int i=0; i<n; i++){
         newTwo = firstNum+secondNum;
         array[i] = newTwo;
         firstNum = secondNum, secondNum = newTwo;
