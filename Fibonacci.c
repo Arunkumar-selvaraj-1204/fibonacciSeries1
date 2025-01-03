@@ -15,6 +15,15 @@ int* FibonacciSeries(int n){
     return array;
 }
 
+int sumSeries(int *arr,int n){
+    int i,sum=0;
+    for(i=0;i<n;i++){
+        
+        sum+=arr[i];
+    }
+    return sum-1;
+}
+
 int main()
 {
     int n;
