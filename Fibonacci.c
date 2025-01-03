@@ -54,6 +54,12 @@ int sumSeries(int *arr, int n){
     return sum-1;
 }
 
+int nthElement(int n){
+    if(n==1) return 0;
+    if(n==2) return 1;
+    return nthElement(n-1)+nthElement(n-2);
+}
+
 int main()
 {
     int n;
@@ -64,6 +70,7 @@ int main()
     int* even=FibonacciSeriesEvenNumbers(array,n);
     for(int i=0; i<sizeof(even)/sizeof(even[0]); i++) printf("%d ", even[i]);
     printf("\n");
-    int* even=FibonacciSeriesOddNumbers(array,n);
+    int* odd=FibonacciSeriesOddNumbers(array,n);
     for(int i=0; i<sizeof(odd)/sizeof(odd[0]); i++) printf("%d ", odd[i]);
+    printf("\n%d",nthElement(n));
 }
