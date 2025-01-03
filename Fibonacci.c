@@ -15,13 +15,19 @@ int* FibonacciSeries(int n){
     return array;
 }
 
-int sumSeries(int *arr,int n){
-    int i,sum=0;
+int* FibonacciSeriesEvenNumbers(int* arr, int n){
+    int i,size=0;
     for(i=0;i<n;i++){
-        
-        sum+=arr[i];
+        if(arr[i]%2==0) size++;
     }
-    return sum-1;
+    int* even = (int*)malloc(size*sizeof(int));
+    int j=0;
+    for(i=0;i<n;i++){
+        if(arr[i]%2==0){
+            even[j++]=arr[i];
+        } 
+    }
+    return even;
 }
 
 int main()
@@ -29,6 +35,8 @@ int main()
     int n;
     scanf("%d", &n);
     int* array = FibonacciSeries(n);
-    
-    
+    for(int i=0; i<n; i++) printf("%d ", array[i]);
+    printf("\n");
+    int* even=FibonacciSeriesEvenNumbers(array,n);
+    for(int i=0; i<sizeof(even)/sizeof(even[0]); i++) printf("%d ", even[i]);
 }
