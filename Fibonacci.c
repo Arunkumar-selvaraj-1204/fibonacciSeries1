@@ -60,8 +60,8 @@ int nthElement(int n){
     return nthElement(n-1)+nthElement(n-2);
 }
 
-int getMaxValue(int* array,int n){
-    return array[n-1];
+int getMaxValue(int* arr,int n){
+    return arr[n-1];
 }
 
 int main()
